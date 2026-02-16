@@ -11,7 +11,7 @@ public class MetodoGestionPartidoPolitico {
 
     //Registrar partido
 
-    public void registrar(PartidoPolitico partido){
+    public void registrar(partidoPolitico partido){
         if (contador<partidos.length){
             partidos[contador] = partido;
             contador++;
@@ -51,3 +51,4 @@ public class MetodoGestionPartidoPolitico {
     }
 
 }
+
