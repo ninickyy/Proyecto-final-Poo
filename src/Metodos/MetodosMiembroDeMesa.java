@@ -26,7 +26,7 @@ public class MetodosMiembroDeMesa {
     public MiembroDeMesa[] listarMiembros() {
         return miembros;
     }
-    public int getTtoal() {
+    public int getTotal() {
         return total;
     }
 }
