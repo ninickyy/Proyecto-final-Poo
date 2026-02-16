@@ -5,16 +5,16 @@ public class MetodoGestionPartidoPolitico {
 
     //Constructor sin parametros
     public MetodoGestionPartidoPolitico(){
-        partidos = PartidoPolitico[100];
-        contador = 0;
+        partidos = new PartidoPolitico[100];
+        nroPartidos = 0;
     }
 
     //Registrar partido
 
     public void registrar(PartidoPolitico partido){
-        if (contador<partidos.length){
-            partidos[contador] = partido;
-            contador++;
+        if (nroPartidos<partidos.length){
+            partidos[nroPartidos] = partido;
+            nroPartidos++;
         }else{
             System.out.println("No es posible agregar más partidos.");
         }
@@ -24,7 +24,7 @@ public class MetodoGestionPartidoPolitico {
 
     public void modificar(int posicion, String nombrePartido, String sigla, String logo, String representanteLegal){
         //Que este dentro del rango
-        if (posicion>=0&&posicion<contador){
+        if (posicion>=0&&posicion<nroPartidos){
             partidoPolitico[posicion].setNombrePartido(nombrePartido);
             partidoPolitico[posicion].setSigla(sigla);
             partidoPolitico[posicion].setLogo(logo);
@@ -40,16 +40,17 @@ public class MetodoGestionPartidoPolitico {
 
     public void eliminar(int posicion){
         //Que este dentro del rango
-        if (posicion>=0&&posicion<contador){
-            for (int i = posicion; i<posicion-1;i++){
+        if (posicion>=0&&posicion<nroPartidos){
+            for (int i = posicion; i<nroPartidos-1;i++){
                 
-                partido[i]=partido[i+1];
+                partidos[i]=partidos[i+1];
 
             }
-            contador--;
+            nroPartidos--;
         }
     }
 
 }
+
 
 
