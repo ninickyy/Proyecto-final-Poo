@@ -1,17 +1,18 @@
 package modelo;
-public class Candidato {
+public class Candidato extends Persona{
     private String dni;
     private String partidoPolitico;
-    private int votos;
     
     //Constructor
     //Default
     public Candidato() {
+        super();
         dni = "";
         partidoPolitico = "";
     }
     //Con parámetros
-    public Candidato(String dni, String partidoPolitico) {
+    public Candidato(String nombres, String apellidos, String dni, String partidoPolitico) {
+        super (nombres , apellidos);
         this.dni = dni;
         this.partidoPolitico = partidoPolitico;
     }
@@ -34,8 +35,11 @@ public class Candidato {
     }
     
     //Método para visualizar
+    @Override
     public String verInfo(){
-        return "Dni: " + dni + "/nPartido político: " + partidoPolitico;
+        return "Nombres: " + nombres +
+                "\nApellidos: " + apellidos +
+                "\nDni : " + dni + "\nPartido politico: " + partidoPolitico;
     }
     
 }
