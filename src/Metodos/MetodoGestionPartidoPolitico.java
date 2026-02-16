@@ -1,17 +1,17 @@
 public class MetodoGestionPartidoPolitico {
     //Atributos
-    private partidoPolitico[] partidos;
+    private PartidoPolitico[] partidos;
     private int nroPartidos;
 
     //Constructor sin parametros
     public MetodoGestionPartidoPolitico(){
-        partidos = partidoPolitico[100];
+        partidos = PartidoPolitico[100];
         contador = 0;
     }
 
     //Registrar partido
 
-    public void registrar(partidoPolitico partido){
+    public void registrar(PartidoPolitico partido){
         if (contador<partidos.length){
             partidos[contador] = partido;
             contador++;
@@ -51,4 +51,5 @@ public class MetodoGestionPartidoPolitico {
     }
 
 }
+
 
