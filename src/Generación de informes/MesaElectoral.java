@@ -1,25 +1,25 @@
-package Modelo;
+package modelo;
 
 public class MesaElectoral {
 
-    private String codigo;
-    private ActaElectoral acta;
+    private String idMesa;
+    private String lugar;
+    private int nroVotantesRegistrados;
+    private int nroVotantesEfectivos;
+    private String resultado;
 
-    public MesaElectoral() {
-        codigo = "";
-        acta = null;
+    public MesaElectoral(String idMesa, String lugar, int nroVotantesRegistrados, int nroVotantesEfectivos, String resultado) {
+        this.idMesa = idMesa;
+        this.lugar = lugar;
+        this.nroVotantesRegistrados = nroVotantesRegistrados;
+        this.nroVotantesEfectivos = nroVotantesEfectivos;
+        this.resultado = resultado;
     }
 
-    public MesaElectoral(String codigo) {
-        this.codigo = codigo;
-        acta = null;
+    public void AsignarMiembro(MiembroDeMesa m) {
     }
 
-    public void asignarActa(ActaElectoral acta) {
-        this.acta = acta;
-    }
-
-    public ActaElectoral getActa() {
-        return acta;
+    public String GenerarInforme() {
+        return "Informe de mesa " + idMesa;
     }
 }
