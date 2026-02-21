@@ -1,47 +1,18 @@
-package Modelo;
+package modelo;
 
-public class Candidato extends Persona {
+public class Candidatos extends Persona {
 
     private String dni;
-    private int votos;
-    private int votosPreferenciales;
+    private String partidoPolitico;
 
-    public Candidato() {
-        super();
-        dni = "";
-        votos = 0;
-        votosPreferenciales = 0;
-    }
-
-    public Candidato(String nombres, String apellidos, String dni) {
+    public Candidatos(String nombres, String apellidos, String dni, String partidoPolitico) {
         super(nombres, apellidos);
         this.dni = dni;
-        votos = 0;
-        votosPreferenciales = 0;
-    }
-
-    public void sumarVoto() {
-        votos++;
-    }
-
-    public void sumarVotoPreferencial() {
-        votosPreferenciales++;
-    }
-
-    public int getVotos() {
-        return votos;
-    }
-
-    public int getVotosPreferenciales() {
-        return votosPreferenciales;
+        this.partidoPolitico = partidoPolitico;
     }
 
     @Override
-    public void mostrarDatos() {
-        super.mostrarDatos();
-        System.out.println("DNI: " + dni);
-        System.out.println("Votos: " + votos);
-        System.out.println("Votos Preferenciales: " + votosPreferenciales);
+    public String verInfo() {
+        return "Candidato: " + nombres + " " + apellidos + " DNI: " + dni;
     }
 }
-
