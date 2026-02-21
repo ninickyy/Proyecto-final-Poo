@@ -1,51 +1,22 @@
 package modelo;
-import java.util.Scanner;
-public class Usuario {
+
+public class Usuario extends Persona {
+
     private String usuario;
     private String clave;
-    
-    //Constructor
-    //Default
-    public Usuario() {
-        usuario = "";
-        clave = "";
-    }
 
-    //Getter and setter
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
+    public Usuario(String nombres, String apellidos, String usuario, String clave) {
+        super(nombres, apellidos);
         this.usuario = usuario;
-    }
-
-    public String getClave() {
-        return clave;
-    }
-
-    public void setClave(String clave) {
         this.clave = clave;
     }
-    
-    //Métodos
-    public boolean autenticacion(String usuarioIngresado, String contraseña){
-        if(usuarioIngresado.equals(usuario) && 
-                contraseña.equals(clave)){
-            return true;
-        }else{
-            return false;
-        }
+
+    public boolean Autenticacion() {
+        return true;
     }
-    public void leer(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese su usuario: ");
-        usuario = sc.next();
-        System.out.println("Ingrese su contrasenia: ");
-        clave = sc.next();
-    }
-    
-    public String verInfo(){
-        return usuario + clave; 
+
+    @Override
+    public String verInfo() {
+        return "Usuario: " + nombres + " " + apellidos;
     }
 }
