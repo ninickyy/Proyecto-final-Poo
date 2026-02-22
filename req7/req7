@@ -1,6 +1,6 @@
 package modelo;
 
-public class req7 {
+public ActaElectoral{
 
     private int numeroActa;
     private String titulo;
