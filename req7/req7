@@ -1,6 +1,6 @@
 package modelo;
 
-public class Req7 {
+public class req7 {
 
     private int numeroActa;
     private String titulo;
