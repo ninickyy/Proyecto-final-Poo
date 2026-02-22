@@ -1,6 +1,6 @@
 package modelo;
 
-public ActaElectoral{
+public class ActaElectoral {
 
     private int numeroActa;
     private String titulo;
@@ -11,8 +11,8 @@ public ActaElectoral{
     private String firma;
     private String selloOficial;
 
-    public Req7(int numeroActa, String titulo, String fecha,
-                String observaciones, String firma, String selloOficial) {
+    public ActaElectoral(int numeroActa, String titulo, String fecha,
+                         String observaciones, String firma, String selloOficial) {
         this.numeroActa = numeroActa;
         this.titulo = titulo;
         this.fecha = fecha;
@@ -26,6 +26,14 @@ public ActaElectoral{
     public void AgregarVoto(Voto v) {
         votos[totalVotos] = v;
         totalVotos++;
+    }
+
+    public void modificarVoto(Voto v) {
+        for (int i = 0; i < totalVotos; i++) {
+            if (votos[i] == v) {
+                votos[i] = v;
+            }
+        }
     }
 
     public int ContarVotos() {
@@ -67,5 +75,12 @@ public ActaElectoral{
         System.out.println("Votos blancos: " + ContarVotosPorTipo("BLANCO"));
         System.out.println("Votos nulos: " + ContarVotosPorTipo("NULO"));
         System.out.println("Votos preferenciales: " + contarVotosPreferenciales());
+    }
+
+    public String GenerarInforme() {
+        return "Acta N°: " + numeroActa +
+               "\nTitulo: " + titulo +
+               "\nFecha: " + fecha +
+               "\nTotal votos: " + totalVotos;
     }
 }
