@@ -1,0 +1,19 @@
+package modelo;
+
+public class Req9 {
+
+    private String usuario;
+    private String clave;
+
+    public Req9(String usuario, String clave) {
+        this.usuario = usuario;
+        this.clave = clave;
+    }
+
+    public boolean IniciarSesion(String user, String pass) {
+        if (this.usuario.equals(user) && this.clave.equals(pass)) {
+            return true;
+        }
+        return false;
+    }
+}
