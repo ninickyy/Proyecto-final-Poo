@@ -1,6 +1,6 @@
 package modelo;
 
-public class req8 {
+public ReporteElectoral {
 
     public void generarReportePorMesa(MesaElectoral m) {
         System.out.println("=== REPORTE POR MESA ===");
