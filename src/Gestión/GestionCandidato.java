@@ -1,8 +1,8 @@
 package método;
 import modelo .*;
 public class GestionCandidato {
-    Candidato[] candidatos = new Candidato[20];
-    int contador = 0; 
+    private Candidato[] candidatos = new Candidato[20];
+    private int contador = 0; 
     //Métodos
     //Registrar candidato
     public void registrarCandidato(Candidato postulante) {
