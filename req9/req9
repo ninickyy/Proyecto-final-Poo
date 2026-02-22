@@ -1,6 +1,6 @@
 package modelo;
 
-public class Req9 {
+public class req9 {
 
     private String usuario;
     private String clave;
