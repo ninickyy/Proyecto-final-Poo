@@ -1,13 +1,13 @@
 package modelo;
 
-public ReporteElectoral {
+public class ReporteElectoral {
 
     public void generarReportePorMesa(MesaElectoral m) {
         System.out.println("=== REPORTE POR MESA ===");
         System.out.println(m.GenerarInforme());
     }
 
-    public void generarReportePorEleccion(Elecciones e) {
+    public void generarReportePorEleccion(Eleccion e) {
         System.out.println("=== REPORTE POR ELECCION ===");
         System.out.println(e.GenerarInforme());
     }
