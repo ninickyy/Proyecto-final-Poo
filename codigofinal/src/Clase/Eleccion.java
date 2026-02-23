@@ -42,7 +42,14 @@ public class Eleccion {
     public void verInfo(){
         System.out.println("Fecha de eleccion: "+fecha);
         System.out.println("tipo de eleccion: "+tipo);
-        System.out.println("Candidatos: "+candidatos);
+        System.out.println("Candidatos: ");
+        if (candidatos != null) {
+            for (int i = 0; i < candidatos.length; i++) {
+            if (candidatos[i] != null) {
+            System.out.println(candidatos[i].verInfo());
+            System.out.println("-----------------");
+            }
+        }
     }
-
+}
 }
