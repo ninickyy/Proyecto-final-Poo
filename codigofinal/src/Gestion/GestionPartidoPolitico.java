@@ -1,3 +1,5 @@
+package metodos;
+import modelo;
 public class MetodoGestionPartidoPolitico {
     //Atributos
     private PartidoPolitico[] partidos;
@@ -51,6 +53,7 @@ public class MetodoGestionPartidoPolitico {
     }
 
 }
+
 
 
 
