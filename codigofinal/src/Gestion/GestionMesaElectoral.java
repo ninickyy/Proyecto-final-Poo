@@ -1,6 +1,6 @@
 package metodos;
-import Modelo.MesaElectoral;
-import Modelo.MiembroDeMesa;
+import modelo.MesaElectoral;
+import modelo.MiembroDeMesa;
     //Atributos
     public class GestionMesaElectoral {
     private MesaElectoral[] mesas;
@@ -75,3 +75,4 @@ import Modelo.MiembroDeMesa;
     }
 
 }
+
