@@ -1,4 +1,4 @@
-package método;
+package metodo;
 import modelo .*;
 public class GestionCandidato {
     private Candidato[] candidatos = new Candidato[20];
@@ -52,4 +52,5 @@ public class GestionCandidato {
         return informe;
       }
  }      
+
 
