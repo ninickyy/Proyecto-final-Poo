@@ -1,6 +1,5 @@
 package modelo;
 import modelo.*;
-import modelo.Voto;
 public class ActaElectoral {
     //Atributos 
     private int numeroActa;
@@ -219,4 +218,5 @@ public class ActaElectoral {
     }
      
 }
+
 
