@@ -1,4 +1,4 @@
-package Modelo;
+package modelo;
 public class MesaElectoral {
     //Atributos
     private String codigoMesa;
@@ -71,3 +71,4 @@ public class MesaElectoral {
    }
    
 }
+
