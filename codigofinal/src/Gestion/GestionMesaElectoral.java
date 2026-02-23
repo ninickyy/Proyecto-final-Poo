@@ -1,4 +1,4 @@
-package Metodos;
+package metodos;
 import Modelo.MesaElectoral;
 import Modelo.MiembroDeMesa;
     //Atributos
@@ -73,4 +73,5 @@ import Modelo.MiembroDeMesa;
             }
         }
     }
+
 }
