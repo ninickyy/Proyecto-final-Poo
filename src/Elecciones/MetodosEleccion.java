@@ -1,41 +1,68 @@
 package Metodos;
 import Modelo.Eleccion;
-import Modelo.MesaElectoral;
-import java.util.Scanner;
+import Modelo.Candidato;
 
-public class MetodosEleccion {
+public class GestionEleccion {
+    
+    //Atributos
     private Eleccion[] elecciones;
     private int total;
-    public MetodosEleccion() {
+    
+    //Constructores
+    public GestionEleccion() {
         elecciones = new Eleccion[10];
         total = 0;
     }
-    //Registrar eleccion
-    public void registrarEleccion(String fecha, String tipo) {
-        Eleccion e = new Eleccion(fecha, tipo);
-        elecciones[total] = e;
-        total++;
+
+    public GestionEleccion(Eleccion[] elecciones, int total) {
+        this.elecciones = elecciones;
+        this.total = total;
     }
-    //Modificacion de eleccion
-    public void modificarEleccion(int pos, String nuevaFecha, String nuevoTipo) {
-        elecciones[pos] = new Eleccion(nuevaFecha, nuevoTipo);
-    }
-    //Eliminar eleccion
-    public void eliminarEleccion(int pos) {
-        for (int i = pos; i < total - 1; i++) {
-            elecciones[i] = elecciones[i + 1];
-        }
-        total--;
-    }
-    //Elegir mesa a eleccion
-    public void asignarMesa(int posEleccion, MesaElectoral mesa) {
-        elecciones[posEleccion].agregarMesa(mesa);
-    }
-    // Listar elecciones
-    public Eleccion[] listarElecciones() {
+    //Getters and Setters
+
+    public Eleccion[] getElecciones() {
         return elecciones;
     }
+
+    public void setElecciones(Eleccion[] elecciones) {
+        this.elecciones = elecciones;
+    }
+
     public int getTotal() {
         return total;
     }
-}
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+    
+    //Registrar eleccion
+    public void registrarEleccion(String fecha, String tipo, Candidato[] candidatos) {
+        if (total < elecciones.length) {
+            Eleccion e = new Eleccion(fecha, tipo, candidatos);
+            elecciones[total] = e;
+            total++;
+        } else {
+            System.out.println("No hay espacio para registrar mas elecciones");
+        }
+    }
+    //Modificacion de eleccion
+    public void modificarEleccion(int posicion, String nuevaFecha, String nuevoTipo) {
+        if (posicion >= 0 && posicion < total) {
+            elecciones[posicion].setFecha(nuevaFecha);
+            elecciones[posicion].setTipo(nuevoTipo);
+        }
+    }
+    
+    //Eliminar eleccion
+    public void eliminarEleccion(int pos) {
+        if (pos >= 0 && pos < total) {
+            for (int i = pos; i < total - 1; i++) {
+                elecciones[i] = elecciones[i + 1];
+            }
+            elecciones[total - 1] = null;
+            total--;
+        }
+    
+    }
+ }
