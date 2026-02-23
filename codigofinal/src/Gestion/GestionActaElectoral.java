@@ -1,4 +1,4 @@
-package metodo;
+package metodos;
 import modelo .*;
 public class GestionActaElectoral {
     private ActaElectoral[] actas = new ActaElectoral[25];
@@ -36,4 +36,5 @@ public class GestionActaElectoral {
         System.out.println("Acta no eliminada");
     }
 }
+
 
