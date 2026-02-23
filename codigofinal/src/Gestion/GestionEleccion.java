@@ -1,4 +1,4 @@
-package Metodos;
+package metodos;
 import Modelo.Eleccion;
 import Modelo.Candidato;
 
@@ -66,3 +66,4 @@ public class GestionEleccion {
     
     }
  }
+
