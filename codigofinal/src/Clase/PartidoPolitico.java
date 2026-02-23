@@ -1,3 +1,4 @@
+package modelo;
 public class PartidoPolitico {
   //Atributos
     private String nombrePartido;
@@ -57,4 +58,5 @@ public class PartidoPolitico {
     }
 
 }
+
 
