@@ -1,5 +1,5 @@
-package Metodos;
-import Modelo.MiembroDeMesa;
+package metodos;
+import modelo.MiembroDeMesa;
 public class GestionMiembroDeMesa {
 
     //Atributos
@@ -76,4 +76,5 @@ public class GestionMiembroDeMesa {
 
         return informe;
     }
+
 }
