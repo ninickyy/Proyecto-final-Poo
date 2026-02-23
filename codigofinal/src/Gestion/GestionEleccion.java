@@ -1,6 +1,6 @@
 package metodos;
-import Modelo.Eleccion;
-import Modelo.Candidato;
+import modelo.Eleccion;
+import modelo.Candidato;
 
 public class GestionEleccion {
     
@@ -66,4 +66,5 @@ public class GestionEleccion {
     
     }
  }
+
 
