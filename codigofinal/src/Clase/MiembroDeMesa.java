@@ -1,4 +1,4 @@
-package Modelo;
+package modelo;
 public class MiembroDeMesa {
     //Atributos
     private String tipo;
@@ -25,3 +25,4 @@ public class MiembroDeMesa {
     }
 
 }
+
