@@ -1,4 +1,4 @@
-package Modelo;
+package modelo;
 public class Eleccion {
     //Atributos
     private String fecha;
@@ -44,4 +44,5 @@ public class Eleccion {
         System.out.println("tipo de eleccion: "+tipo);
         System.out.println("Candidatos: "+candidatos);
     }
+
 }
