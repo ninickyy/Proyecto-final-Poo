@@ -209,7 +209,7 @@ public class ActaElectoral {
         return "ActaElectora: " + "Numero de acta: " + numeroActa +
                 "\nTitulo: " + titulo + 
                 "\nFecha: " + fecha + 
-                "\nVotos: " + votos + //aca tengo duda pq como le puse el MAX, puede que se muestren varios ! 
+                "\nVotos: " + votos + 
                 "\nVotos Preferencial: " + votosPreferencial + 
                 "\nTotal de votos: " + totalVotos + 
                 "\nObservaciones: " + observaciones + 
@@ -219,3 +219,4 @@ public class ActaElectoral {
     }
      
 }
+
