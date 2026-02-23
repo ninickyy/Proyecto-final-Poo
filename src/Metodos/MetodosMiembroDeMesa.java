@@ -1,33 +1,79 @@
 package Metodos;
 import Modelo.MiembroDeMesa;
-public class MetodosMiembroDeMesa {
-    
+public class GestionMiembroDeMesa {
+
+    //Atributos
     private MiembroDeMesa[] miembros;
-    private int total;
-    
-    public MetodosMiembroDeMesa() {
-        miembros = new MiembroDeMesa[20];
-        total = 0;
-}
-    //Registro de miembro
-    public void registrarMiembro(String nombres, String apellidos, String tipo){
-        MiembroDeMesa m = new MiembroDeMesa(nombres, apellidos, tipo);
-        miembros[total] = m;
-        total++;
-  }  
-    //Eliminar Miembro
-    public void eliminarMiembro(int el){
-        for (int i = el; i < 10; i++) {
-        miembros[i] = miembros[i + 1];
-        }
-        total--;
+    private int totalMiembros;
+
+    //Constructores
+    public GestionMiembroDeMesa() {
+        miembros = new MiembroDeMesa[10];
+        totalMiembros = 0;
     }
-    //Listar Miembros
-    public MiembroDeMesa[] listarMiembros() {
+    
+    public GestionMiembroDeMesa(MiembroDeMesa[] miembros, int totalMiembros) {
+        this.miembros = miembros;
+        this.totalMiembros = totalMiembros;
+    }
+    
+    //Getters and Setters
+
+    public MiembroDeMesa[] getMiembros() {
         return miembros;
     }
-    public int getTotal() {
-        return total;
+
+    public void setMiembros(MiembroDeMesa[] miembros) {
+        this.miembros = miembros;
+    }
+
+    public int getTotalMiembros() {
+        return totalMiembros;
+    }
+
+    public void setTotalMiembros(int totalMiembros) {
+        this.totalMiembros = totalMiembros;
+    }
+
+    //Registrar miembro
+    public void registrar(MiembroDeMesa m) {
+        if (totalMiembros < miembros.length) {
+            miembros[totalMiembros] = m;
+            totalMiembros++;
+        } else {
+            System.out.println("No hay espacio para más miembros.");
+        }
+    }
+
+    //Modificar miembro
+    public void modificar(int posicion, MiembroDeMesa nuevoMiembro) {
+        if (posicion >= 0 && posicion < totalMiembros) {
+            miembros[posicion] = nuevoMiembro;
+        }
+    }
+
+    //Eliminar miembro
+    public void eliminar(int posicion) {
+        if (posicion >= 0 && posicion < totalMiembros) {
+            for (int i = posicion; i < totalMiembros - 1; i++) {
+                miembros[i] = miembros[i + 1];
+            }
+            miembros[totalMiembros - 1] = null;
+            totalMiembros--;
+        }
+    }
+
+    //Generar informe
+    public String generarInforme() {
+        String informe = "===INFORME DE MIEMBROS DE MESA===\n";
+
+        for (int i = 0; i < totalMiembros; i++) {
+            informe += "Posición " + i + ": ";
+            informe += "Tipo: " + miembros[i].getTipo() + "\n";
+        }
+
+        informe += "Total de miembros registrados: " + totalMiembros;
+
+        return informe;
     }
 }
-
