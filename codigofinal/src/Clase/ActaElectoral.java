@@ -199,7 +199,6 @@ public class ActaElectoral {
         system.out.println("Total votos registrados: " + totalVotos); 
     }
 
-    
     public String verInfo() {
         return "ActaElectora: " + "Numero de acta: " + numeroActa +
                 "\nTitulo: " + titulo + 
@@ -217,7 +216,6 @@ public class ActaElectoral {
         }
     }
 }
-
 
 
 
