@@ -18,7 +18,6 @@ public class GestionMiembroDeMesa {
     }
     
     //Getters and Setters
-
     public MiembroDeMesa[] getMiembros() {
         return miembros;
     }
@@ -37,44 +36,51 @@ public class GestionMiembroDeMesa {
 
     //Registrar miembro
     public void registrar(MiembroDeMesa m) {
-        if (totalMiembros < miembros.length) {
-            miembros[totalMiembros] = m;
-            totalMiembros++;
-        } else {
-            System.out.println("No hay espacio para más miembros.");
-        }
+        miembros[totalMiembros] = m;
+        totalMiembros++;
     }
 
     //Modificar miembro
-    public void modificar(int posicion, MiembroDeMesa nuevoMiembro) {
-        if (posicion >= 0 && posicion < totalMiembros) {
-            miembros[posicion] = nuevoMiembro;
+    public void modificarMiembro(String nombres, String apellidos, String nuevoTipo){
+    for(int i = 0; i < totalMiembros; i++){
+        //se busca a el miembro por nombres y apellidos
+        if(miembros[i].getNombres().equals(nombres) &&
+           miembros[i].getApellidos().equals(apellidos)){
+            //se actualiza el tipo del miembro
+            miembros[i].setTipo(nuevoTipo);
+            System.out.println("Se modifico el miembro");
+            return;
         }
     }
+    System.out.println("Miembro no modificado");
+}
 
     //Eliminar miembro
-    public void eliminar(int posicion) {
-        if (posicion >= 0 && posicion < totalMiembros) {
-            for (int i = posicion; i < totalMiembros - 1; i++) {
-                miembros[i] = miembros[i + 1];
-            }
-            miembros[totalMiembros - 1] = null;
+    public void eliminarMiembro(String nombres, String apellidos){
+    for(int i = 0; i < totalMiembros; i++){
+        //se localiza al miembro por nombres y apellidos
+        if(miembros[i].getNombres().equals(nombres) &&
+           miembros[i].getApellidos().equals(apellidos)){
+            //se reemplaza por el ultimo miembro
+            miembros[i] = miembros[totalMiembros - 1];
             totalMiembros--;
+            System.out.println("Se elimino el miembro");
+            return;
         }
     }
+    System.out.println("Miembro no eliminado");
+}
 
     //Generar informe
-    public String generarInforme() {
-        String informe = "===INFORME DE MIEMBROS DE MESA===\n";
+    public String generarInforme(){
 
-        for (int i = 0; i < totalMiembros; i++) {
-            informe += "Posición " + i + ": ";
-            informe += "Tipo: " + miembros[i].getTipo() + "\n";
-        }
+    String informe = "\nMiembros de Mesa:\n";
 
-        informe += "Total de miembros registrados: " + totalMiembros;
-
-        return informe;
+    for(int i = 0; i < totalMiembros; i++){
+        informe += miembros[i].verInfo() + "\n";
     }
+
+    return informe;
+}
 
 }
