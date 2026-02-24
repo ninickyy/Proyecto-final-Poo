@@ -213,9 +213,11 @@ public class ActaElectoral {
         for (int i = 0; i < totalVotos; i++) {
             votos[i].verInfo();
             System.out.println("-----------------------");
+            
         }
     }
 }
+
 
 
 
