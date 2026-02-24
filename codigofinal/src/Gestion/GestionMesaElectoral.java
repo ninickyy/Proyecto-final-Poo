@@ -36,6 +36,7 @@ import modelo.MiembroDeMesa;
     
     // Registrar mesa
     public void registrar(MesaElectoral m) {
+        //verificar espacio
         if (totalMesasElectorales < mesas.length) {
             mesas[totalMesasElectorales] = m;
             totalMesasElectorales++;
@@ -45,23 +46,39 @@ import modelo.MiembroDeMesa;
     }
 
     // Modificar mesa
-    public void modificar(int posicion, MesaElectoral nuevaMesa) {
-        if (posicion >= 0 && posicion < totalMesasElectorales) {
-            mesas[posicion] = nuevaMesa;
+    public void modificarMesa(String codigo, String Lugar,int Registrados, int Efectivos) {
+
+    for (int i = 0; i < totalMesasElectorales; i++) {
+        //se accede a modificar mediante el codigo de mesa
+        if (mesas[i].getCodigoMesa().equals(codigo)) {
+            //actualizacion de datos
+            mesas[i].setLugar(Lugar);
+            mesas[i].setNroVotantesRegistrados(Registrados);
+            mesas[i].setNroVotantesEfectivos(Efectivos);
+
+            System.out.println("Mesa modificada");
+            return;
         }
+    }
+
+    System.out.println("Mesa no encontrada");
     }
 
     // Eliminar mesa
-    public void eliminar(int posicion) {
-        if (posicion >= 0 && posicion < totalMesasElectorales) {
-            for (int i = posicion; i < totalMesasElectorales - 1; i++) {
-                mesas[i] = mesas[i + 1];
-            }
-            mesas[totalMesasElectorales - 1] = null;
-            totalMesasElectorales--;
+    public void eliminarMesa(String codigo){
+
+    for(int i = 0; i < totalMesasElectorales; i++){
+        //se accede mediante el codigo para eliminar
+        if(mesas[i].getCodigoMesa().equals(codigo)){
+            //disminuye el total de mesas
+            mesas[i] = mesas[totalMesasElectorales - 1];
+            totalMesasElectorales--;//disminuye el contador
+            System.out.println("Se elimino la mesa");
+            return;
         }
     }
-
+        System.out.println("Mesa no eliminada");
+    }
     // Asignar miembro a una mesa específica
     public void asignarMiembro(int posicionMesa, MiembroDeMesa miembro, int posicionMiembro) {
         if (posicionMesa >= 0 && posicionMiembro < totalMesasElectorales) {
@@ -72,6 +89,15 @@ import modelo.MiembroDeMesa;
                 miembros[posicionMiembro] = miembro;
             }
         }
+    }
+    public String generarInforme() {
+    String informe = "\nMesa Electoral:\n";
+
+    for (int i = 0; i < totalMesasElectorales; i++) {
+        informe += mesas[i].verInfo() + "\n";
+    }
+
+    return informe;
     }
 
 }
