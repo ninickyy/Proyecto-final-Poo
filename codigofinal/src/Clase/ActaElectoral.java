@@ -28,7 +28,6 @@ public class ActaElectoral {
         selloOficial = ""; 
     }
     //Con parámetros
-
     public ActaElectoral(int numeroActa, String titulo, String fecha, Voto[] votos, int votosPreferencial, int totalVotos, 
             String observaciones, String firma, String selloOficial) {
         this.numeroActa = numeroActa;
@@ -216,6 +215,11 @@ public class ActaElectoral {
         }
     }
 }
+
+
+
+
+
 
 
 
