@@ -1,16 +1,19 @@
 package modelo;
-public class MiembroDeMesa {
+public class MiembroDeMesa extends Persona {
     //Atributos
     private String tipo;
     
     //Constructor
     public MiembroDeMesa() {
+        super();
         tipo = "";
     }
 
-    public MiembroDeMesa(String tipo) {
+    public MiembroDeMesa(String nombres, String apellidos, String tipo) {
+        super(nombres, apellidos);
         this.tipo = tipo;
     }
+    
     //Getters and Setters
 
     public String getTipo() {
@@ -20,9 +23,9 @@ public class MiembroDeMesa {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    public void verInfo(){
-        System.out.println("tipo de Miembro: "+tipo);
+    public String verInfo(){
+    return "\nNombre: " +super.getNombres()+
+           "\nApellidos: " +super.getApellidos()+
+           "\nTipo de miembro: " +tipo;
     }
-
 }
-
