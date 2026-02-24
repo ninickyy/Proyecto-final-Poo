@@ -7,7 +7,7 @@ public class MesaElectoral {
     private int nroVotantesRegistrados;
     private int nroVotantesEfectivos;
     
-    //Constructor
+    //Constructores
     public MesaElectoral() {
         codigoMesa = "";
         lugar = "";
@@ -23,7 +23,7 @@ public class MesaElectoral {
         this.nroVotantesRegistrados = nroVotantesRegistrados;
         this.nroVotantesEfectivos = nroVotantesEfectivos;
     }
-
+    //Getters and Setters
     public String getCodigoMesa() {
         return codigoMesa;
     }
@@ -63,12 +63,12 @@ public class MesaElectoral {
     public void setNroVotantesEfectivos(int nroVotantesEfectivos) {
         this.nroVotantesEfectivos = nroVotantesEfectivos;
     }
-   public void verInfo(){
-        System.out.println("Codigo de mesa: "+codigoMesa);
-        System.out.println("lugar: "+lugar);
-        System.out.println("Total de votantes Registrados: "+nroVotantesRegistrados);
-        System.out.println("total de votantes Efectivos: "+nroVotantesEfectivos);
-   }
+   public String verInfo(){
+    return "\nEl codigo de la mesa es: " +codigoMesa+
+           "\nEl lugar de votación es: " +lugar+
+           "\nEl total de votantes registrados es: " +nroVotantesRegistrados+
+           "\nEl total de votantes efectivos es: " +nroVotantesEfectivos;
+    }
    
 }
 
