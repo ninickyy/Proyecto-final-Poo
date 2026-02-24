@@ -121,7 +121,8 @@ public class ActaElectoral {
         if(totalVotos < votos.length){
             //si totalVotos es menor a la cantidad en el arreglo, se suma a este
             votos[totalVotos] = v;
-            totalVotos++;
+            totalVotos++
+            System.out.println("Voto agregado correctamente.");
             //si es mayor, el sistema ya no permite ingresar más
         }else{
             System.out.println("No se pueden registrar más votos,"
@@ -134,29 +135,23 @@ public class ActaElectoral {
             if(votos[i].getCodigo() == codigo){
                 votos[i] = v;
             }
-            else{
-                System.out.println("No se pudo modificar el voto");
-            }
+        }
+        System.out.println("No se pudo modificar el voto");
         }
     }
     
     public int contarVotos(){
-        //Solo devuelve los votos totales registrados en el programa
         return totalVotos;
     }
     
     public int contarVotosTipo(String tipo){
-        int votoBlanco = 0;
-        int votoNulo = 0;
-        int votoValido = 0;
-        if (tipo.equals("Blanco") || tipo.equals("blanco")) {
-            votoBlanco++;
-        }else if(tipo.equals("Nulo") || tipo.equals("nulo")){
-            votoNulo++;
-        }else if (tipo.equals("Valido") || tipo.equals("valido")){
-            votoValido++;
+    int contador = 0;
+    for (int i = 0; i < totalVotos; i++) {
+        if(votos[i].getTipo().equals(tipo)){
+            contador++;
+            }
         }
-        return totalVotos;
+    return contador;
     }
     
     public int contarVotosPorCandidato (Candidato c){
@@ -201,6 +196,7 @@ public class ActaElectoral {
         System.out.println("Votos válidos: " + votoValido);
         System.out.println("Votos en blanco: " + votoBlanco);
         System.out.println("Votos nulos: " + votoNulo);
+        system.out.println("Total votos registrados: " + totalVotos); 
     }
 
     
@@ -214,9 +210,12 @@ public class ActaElectoral {
                 "\nObservaciones: " + observaciones + 
                 "\nFirma: " + firma + 
                 "\nSello oficial: " + selloOficial;
-         
+        for (int i = 0; i < totalVotos; i++) {
+            votos[i].verInfo();
+            System.out.println("-----------------------");
+        }
     }
-     
 }
+
 
 
